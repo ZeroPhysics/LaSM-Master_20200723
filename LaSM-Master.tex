@@ -1,0 +1,173 @@
+% Definition of pathes
+% >>> MUST BE at the beginning of the main file 
+% ----------------------------------------------------- 
+\newcommand{\ContentPath}   {01-Content/}            % Sections, Chapters,...
+\newcommand{\GraficPath}    {02-Figures/}            % 
+\newcommand{\TablesPath}    {03-Tables/}             
+\newcommand{\CLSPath}       {11-DocumentClass/}      % *.cls
+\newcommand{\STYPath}       {12-Styles-Packages/}    % *.sty
+\newcommand{\FMPath}        {13-Frontmatter/}
+%
+%
+% ==================================================
+%       C H O O S E     D O C U M E N T C L A S S (only 1)
+% ==================================================    
+% \documentclass{\CLSPath TechnicalReport}
+% \documentclass{\CLSPath Memo}
+% \documentclass{\CLSPath Minutes}
+\documentclass{\CLSPath Thesis}
+% \documentclass{\CLSPath Paper}
+%
+%
+% ==================================================
+%       F O N T    E N C O D I N G
+% ==================================================
+\usepackage[utf8]{inputenc} % for german "Umlaute" ä, ü, ß
+\usepackage[T1]{fontenc} 
+%
+%
+% ==================================================
+%       T I T L E ,  N A M E S ,  K E Y W O R D S
+% ==================================================
+%
+% General Commands
+% --------------------------------------------------
+\newcommand{\lasmtitle}{{Titel}}
+\newcommand{\lasmShortTitle}{{Kurztitel}}
+\newcommand{\lasmauthor}{{Max Mustermann}}
+\newcommand{\lasmdate}{\today}              % DATUM: ggf manuell eintragen
+%
+%
+% Specific for   T E C H N I C A L   R E P O R T
+% --------------------------------------------------
+\newcommand{\lasmtopic}{            Thema}
+\newcommand{\lasmtype}{             Schlussbericht}
+\newcommand{\lasmfunding}{          Bundesministerium XYZ}
+\newcommand{\lasmfundingProgram}{   XYZ}
+\newcommand{\lasmleadPartner}{      XYZ}
+\newcommand{\lasmfundingReference}{ 123456789}
+\newcommand{\lasmBeginEndDate}{     MM/YYYY - MM/YYYY}
+\newcommand{\lasmuniversityA}{      Technische Hochschule Rosenheim}
+\newcommand{\lasmuniversityB}{      Hochschulstraße 1}
+\newcommand{\lasmuniversityC}{      83024 Rosenheim}
+\newcommand{\lasmprojectLeader}{    Name}
+\newcommand{\lasmprojectStaffA}{	Name 1} 
+\newcommand{\lasmprojectStaffB}{	Name 2} 
+%
+\newcommand*{\lasmkeywords}{{		
+		                            Keyword 1,  
+		                            Keyword 2
+	}}
+%
+%
+% Specific for   T H E S I S
+% --------------------------------------------------
+\newcommand{\lasmthesistype}{{Bachelorarbeit}}
+\newcommand{\lasmthesisstudies}{Innenausbau\xspace}
+\newcommand{\lasmthesisSupervisorA}{Prof. Dr. Max Mustermann}
+\newcommand{\lasmthesisSupervisorB}{Prof. Dr. Max Mustermann}
+\newcommand{\lasmthesisRegDate}{DD. Month YYYY}
+%
+%
+% ==================================================
+%       L O A D   M A I N   S T Y L E   F I L E
+% ==================================================    
+%
+\usepackage{\STYPath GlobalStyle} 
+%
+%
+% ==================================================
+%       L O A D   . B I B   F I L E
+% ==================================================    
+%
+\addbibresource{Literature.bib}         % *.bib file    
+%
+%
+% ==================================================
+%       L O A D   T A B L E I N P U T   F I L E
+% ==================================================    
+%
+\input{\TablesPath TableLoad}
+%
+%
+% ==================================================
+%  F O N T   S E T T I N G S   T H   R O S E N H E I M
+% ==================================================
+%
+% Auskommentieren wenn Latex Schrift gewünscht
+%
+\usepackage[scaled]{helvet}                     % Helvetica laden
+\renewcommand\familydefault{\sfdefault}         % Serifenlose Schrift
+\definecolor{THDunkelgrau}{RGB}{111,111,110}    % TH Ro Dunkelgrau definieren
+\color{THDunkelgrau}                            % Farbe auf Text anwenden
+% %
+%
+% ==================================================
+% ==================================================
+%       B E G I N   D O C U M E N T
+% ==================================================
+% ==================================================  
+% 
+% \usepackage[scaled]{helvet}
+% \renewcommand\familydefault{\sfdefault}
+% \definecolor{THDunkelgrau}{RGB}{111,111,110}  % TH Ro Dunkelgrau 
+% \color{THDunkelgrau}
+\begin{document}
+%
+% ==================================================
+% LIST OF TODOS (can be added here)
+% ==================================================
+%\listoftodos
+%
+%
+% ==================================================
+% FRONTMATTER (automatically from document class)
+% ==================================================
+\inputFM
+%
+%
+% ==================================================
+% SAMPLE FILES (manuals. examples, blindocument ...)
+% ================================================== 
+%
+% % >>> blinddocument
+\blinddocument
+%
+% >>> Kurzanleitung
+\import{\ContentPath SampleFiles/}{Kurzanleitung}
+%
+% >>> Beispiele
+\import{\ContentPath SampleFiles/}{Beispiele}
+%
+% >>> Struktur
+% \import{\ContentPath SampleFiles/}{Struktur}
+%
+% >>> Ausführliche Beispiele
+% \import{\ContentPath SampleFiles/}{Anwendungsbeispiele}
+%
+% >>> ToDos und Fehlermeldungen
+% \import{\ContentPath SampleFiles/}{logs}
+%
+%
+% ==================================================
+%       Y O U R   C O N T E N T 
+% ================================================== 
+%
+\import{\ContentPath}{lasmREADME} % Replace "FileName" with correct name (without ".tex")
+%
+%
+% ==================================================
+%       Y O U R   A P P E N D I X
+% ================================================== 
+%
+\inputAPPENDIX
+%
+%\import{\ContentPath}{FileName} % Replace "FileName" with correct name (without ".tex")
+%
+%
+% ==================================================
+% BACKMATTER (automatically from document class)
+% ==================================================
+\inputBM
+%
+\end{document}

@@ -1,0 +1,365 @@
+\ProvidesPackage{\STYPath PlotProperties}
+%To Do Sprache Achsenbeschriftungen....
+%
+% ==================================================
+%   P L O T   P R O P E R T I E S
+% ==================================================
+
+% This .sty file file contains:
+% --> Definition of DEFAULT COLORS
+% --> Commands for DEFAULT LINESTYLES (width and style)
+% --> Setting for DEFAULT MARKERS
+% --> Default TIKZSTYLES for LINES in pgfplots
+% --> Default FONTSIZE
+% --> Default settings for AXIS SIZE and POSITIONING
+% --> Default settings for PGF PLOTS/AXIS
+% 		-> global settings for legends, markers and axis types
+% 		-> specific settings for:
+% 			> semilogx and loglog axis
+% 			> semilogx and loglog axis for one-third octave bands
+% 			> boxplots for one-third-octave bands (FMIN 50Hz or FMIN 100Hz)
+
+
+% -------------------------------------------------- 
+% >>> DEFAULT COLORS
+% 		Used for tikz skteches and pgfplots
+% 		Choose one Alternative by commenting/uncommenting 
+
+% 	>>> Colors for plots (Lines ect.)
+
+% --> ALTERNATIVE 1) Black and white
+%\definecolor{mycolor1}{RGB}{ 0,  0,   0}
+%\definecolor{mycolor2}{RGB}{184,184,184}
+%\definecolor{mycolor3}{RGB}{ 61, 61, 61}
+%\definecolor{mycolor4}{RGB}{122,122,122}
+
+% --> ALTERNATIVE 2) TH Rosenheim CI
+\definecolor{mycolor1}{RGB}{243,145,  0}  % TH Ro Orange
+\definecolor{mycolor2}{RGB}{103,112,  0}  % TH Ro Technik
+\definecolor{mycolor3}{RGB}{146, 21,120}  % TH Ro Gestaltung
+\definecolor{mycolor4}{RGB}{  0, 47, 93}  % TH Ro Wirtschaft
+\definecolor{mycolor5}{RGB}{ 57,118,163}  % TH Ro Gesundheit
+\definecolor{mycolor6}{RGB}{111,111,110}  % TH Ro Dunkelgrau 
+\definecolor{mycolor8}{RGB}{ 61, 61, 61}  % TH Ro Hellgrau
+\definecolor{mycolor9}{RGB}{122,122,122}
+
+% --> ALTERNATIVE 3) Based on color Liverpool University blue -> col1
+% 	                 Using complementary colors
+
+% \definecolor{mycolor1}{RGB}{ 3, 31, 115}
+% \definecolor{mycolor2}{RGB}{ 170,117, 0}
+% \definecolor{mycolor3}{RGB}{140,  0, 71}
+% \definecolor{mycolor4}{RGB}{100,158,  0}
+
+
+
+% 	>>> Colors for sketches/drawings (ideally using colors defined above for plots)
+
+% --> FIXED GREY SCALE COLORS
+
+% 	  Lines (dark enough for thin lines)
+\definecolor{colDraw1a}{RGB}{  0,  0,  0} 	% grey 0,  BLACK
+\definecolor{colDraw1b}{RGB}{153,153,153} 	% grey 60, GREY
+
+%     Fillings (lighter gray can be used for fillings)
+\definecolor{colDraw2a}{RGB}{245,245,245}   % grey 96, Shades for fillings
+\definecolor{colDraw2b}{RGB}{222,222,222}   % 
+\definecolor{colDraw2c}{RGB}{199,199,199}   % grey 78
+\definecolor{colDraw2d}{RGB}{176,176,176}   % 
+\definecolor{colDraw2e}{RGB}{153,153,153}   % grey 60
+\definecolor{colDraw2f}{RGB}{130,130,130}   % 
+%
+
+
+% -------------------------------------------------- 
+% >>> DEFAULT LINESTYLES
+
+% Line width options: \LWa to \LWe
+\newcommand{\LWa}{very thin} 	% corresponds to 0.2pt
+\newcommand{\LWb}{thin} 		% corresponds to 0.4pt (the default width)
+\newcommand{\LWc}{semithick} 	% corresponds to 0.6pt
+\newcommand{\LWd}{thick}	 	% corresponds to 0.8pt
+\newcommand{\LWe}{very thick} 	% corresponds to 1.2pt
+
+% Line style options: \LSa to \LSg
+\newcommand{\LSa}{solid}
+\newcommand{\LSb}{densely dashed}
+\newcommand{\LSc}{densely dotted}
+\newcommand{\LSd}{densely dashdotted}
+\newcommand{\LSe}{loosely dashed}
+\newcommand{\LSf}{loosely dotted}
+\newcommand{\LSg}{loosely dashdotted}
+
+
+% -------------------------------------------------- 
+% >>> DEFAULT MARKERS
+%
+% * means that marker are filled
+\newcommand{\LMa}{*}
+\newcommand{\LMb}{square*}
+\newcommand{\LMc}{triangle*}
+\newcommand{\LMd}{diamond*}
+\newcommand{\LMe}{pentagon*}
+
+% Marker Options: note that no "\" is required
+% 	LMa to LMe (markers filled with color of line)
+%   LMaWhite to LMeWhite (markers filled white)
+\tikzset{
+	LMa/.style={mark=\LMa, mark options={scale=0.9}},
+	LMaWhite/.style={mark=\LMa, mark options={\LSa, fill=white, scale=0.9}},
+	LMb/.style={mark=\LMb, mark options={scale=0.8}},
+	LMbWhite/.style={mark=\LMb, mark options={\LSa, fill=white, scale=0.8}},
+	LMc/.style={mark=\LMc, mark options={scale=1.0}},
+	LMcWhite/.style={mark=\LMc, mark options={\LSa, fill=white, scale=1.0}},
+	LMd/.style={mark=\LMd, mark options={scale=1.0}},
+	LMdWhite/.style={mark=\LMd, mark options={\LSa, fill=white, scale=1.0}},
+	LMe/.style={mark=\LMe, mark options={scale=0.9}},
+	LMeWhite/.style={mark=\LMe, mark options={\LSa, fill=white, scale=0.9}},
+}
+
+% -------------------------------------------------- 
+% >>> DEFAULT LINE DEFINITIONS
+% 		NOTE 1: no "\" is required
+%		NOTE 2: based on 
+% 				-> DEFAULT COLORS
+% 				-> DEFAULT LINESTYLES
+% 				-> DEFAULT MARKERS
+%
+\tikzset{
+	styTheoryA/.style={color=mycolor1, \LWb, \LSa},
+	styTheoryB/.style={color=mycolor1, \LWb, \LSb},
+	styTheoryC/.style={color=mycolor1, \LWb, \LSc},
+	styTheoryD/.style={color=mycolor1, \LWb, \LSd},
+	styMeasTobA/.style={color=mycolor1, \LWc, \LSa, LMa, mark options={fill=mycolor1}},
+	styMeasTobB/.style={color=mycolor1, \LWc, \LSa, LMbWhite},
+	styMeasTobC/.style={color=mycolor1, \LWc, \LSa, LMc, mark options={fill=mycolor1}},
+	styMeasTobD/.style={color=mycolor1, \LWc, \LSa, LMdWhite},
+	styFreqRangeSeparator/.style={color=mycolor1,\LWa,\LSb},
+	styFreqRangeDoubleArrow/.style={color=mycolor1,\LWa,\LSb,latex-latex},
+}
+
+
+% -------------------------------------------------- 
+% >>> DEFAULT FONTSIZE
+%
+\pgfplotsset{every axis/.style={font=\small}} 				% Achsnummerierung
+\pgfplotsset{every axis label/.style={font=\small}} 		% Achsbeschriftung
+\pgfplotsset{every node/.style={font=\footnotesize}} 	 	% Text in Grafiken	
+\pgfplotsset{every legend/.style={font=\footnotesize}} 	 	% Legende
+
+
+% -------------------------------------------------- 
+% >>> DEFAULT SETTINGS FOR AXIS SIZE AND POSITIONING
+% 			The basic idea is to align all figures nicely below each other
+% 			Therefore "trim axis left" is used for the tikzpicture to set the axis as left 
+% 			boundary (not the ylabel)
+% 			By \raggedright for \AxisPos the axis will be aligned left
+% 			Using \LeftHspace the horizontal postion can be controlled
+% 			Finally \fwidthDef sets the default width
+%
+%	>>> Initiate Variables
+%		These variables are used for positioning and size of figures
+% 		These can and are not only used for pgf plots but also pictures etc.
+		\newlength\fheight                      % Variable for the height of Tikz -plots
+		\newlength\fwidth                       % Variable for the width of Tikz -plots
+		\newlength\fwidthDef                    % Variable for the default width of Tikz -plots 
+		\newlength\PicWidthDefTwo 				% Variable for width of two pictures side by side 						
+		\newlength\PicSpaceDefTwo 				% Variable for horizontal spacing between two pictures 							
+%
+% 	>>> Default width for ALL axis
+%       Sets the default width for pgf plots. Can alos be used in the document by
+% 		setting the varibale \fwidth to \fwidthDef such as: \setlength\fwidth{\fwidthDef}
+		\setlength\fwidthDef{0.7\columnwidth}
+%
+%	>>> Default width and spacing for two figures side-by-side		
+		\setlength\PicWidthDefTwo{0.4\columnwidth}
+		\setlength\PicSpaceDefTwo{0.066\columnwidth}% side by side ( 2x0.4=0.8 --> 0.2 left, 0.2/3 = 0.66)
+%
+% 	>>> Horizontal space left of axis		
+		\newcommand{\LeftHspace}{0.18\columnwidth}
+
+
+% -------------------------------------------------- 
+% >>> DEFAULT SETTINGS FOR AXIS
+%       These default setting apply for all axis, however if anything is defined locally, these 
+% 		default settings will be ignored and the local setting will be used!
+%
+%
+\pgfplotsset{compat=newest,  
+	%
+	% >>> G L O B A L   LEGEND SETTINGS:
+	legend style={draw=none,fill=none,legend cell align=left},
+	%
+	% >>> G L O B A L   MARKER SETTINGS (only if the markers defined above are not used):
+	every mark/.append style={scale=0.8},
+	%
+	% >>> G L O B A L   SETTINGS FOR ALL TYPES OF AXIS:
+	every axis/.append style={ % Einstellung für Achsen in Diagrammen
+		width=\fwidthDef, 
+		height=0.65*\fwidthDef, 
+		scale only axis,
+		minor y tick num=1,
+		scaled ticks=false,  	% Use eg 0.001 instead of 10^-3
+		ymajorgrids=false, 		% keine Gitternetzlinien
+		yminorgrids=false,
+		xmajorgrids=false,
+		xminorgrids=false, 
+	},
+ 	%
+	% >>> S P E C I F I C   SETTINGS FOR SEMILOGX AXIS:
+	every semilogx axis/.append style={
+		xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=0,rotate=0},%Anzahl der Nachkommastellen
+		xlabel= \acs{f} in \si{\Hz}, %To Do Sprache
+		xtick={31.5,63,125,250,500,1000,2000,4000,8000},
+		minor xtick={20,25,40,50,80,100,160,200,315,400,630,800,1250,1600,2500,3150,5000,6300},
+		xticklabels={$31.5$,$63$,$125$,$250$,$500$,$1$\si{\kilo},$2$\si{\kilo},$4$\si{\kilo},$8$\si{\kilo}},
+		xmin=31.5, xmax=8000,
+	},
+	%
+	% >>> S P E C I F I C   SETTINGS FOR LOGLOG AXIS:			
+	every loglog axis/.append style={
+		xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=0,rotate=0},%Anzahl der Nachkommastellen
+		xlabel= \acs{f} in \si{\Hz},
+		xtick={31.5,63,125,250,500,1000,2000,4000,8000},
+		minor xtick={20,25,40,50, 80,100, 160,200, 315,400, 630,800, 1250,1600, 2500,3150, 5000,6300},
+		xticklabels={$31.5$,$63$,$125$,$250$,$500$,$1$\si{\kilo},$2$\si{\kilo},$4$\si{\kilo},$8$\si{\kilo}},
+		xmin=31.5, xmax=8000,
+	},
+}
+
+% -------------------------------------------------- 
+% >>> ONE-THIRD-OCTAVE-BAND PLOTS
+%       Uses basically semilogx resp. loglog axis settings from above.
+%
+%		Use for example as follows:
+%		\begin{semilogxaxis}[% 			--> semilogxaxis is basis
+%			semilogxtob axis style, ... --> additional settings are loaded
+%
+% 		With \pgfplotsset slight changes are possible by defining an axis style on top
+% 		Except that the xlabel is different
+% 		and x ticks at one-third octave bands are added
+%
+% >>> S P E C I F I C   SETTINGS FOR SEMILOGX TOB AXIS:
+\pgfplotsset{semilogxtob axis style/.append style={
+		xlabel= One-third-octave-band centre frequency (\si{\Hz}),	
+	}              
+}
+%
+% >>> SPECIFIC SETTINGS FOR LOGLOG TOB AXIS:
+\pgfplotsset{loglogtob axis style/.append style={
+		xlabel= One-third-octave-band centre frequency in \si{\Hz},	
+	}              
+}
+
+
+% -------------------------------------------------- 
+% >>> DEFAULT SETTINGS FOR BOXPLOTS
+%       This is necessary as boxplots are typically exported with a x-vector in the 
+% 		form x = 1, 2, 3, ... insted of x = 50, 63, 80, ... for tob starting at 50 Hz 
+% 		for example
+% 		Additionally default style settings can be made
+%
+% 	>>> COLOR, LINESTYLES AND MARKERS OF BOXPLOTS
+		\newcommand{\MedCol}{mycolor1}
+		\newcommand{\MedLS}{\LSa}
+		\newcommand{\MedLW}{\LWc}
+		\newcommand{\BoxCol}{mycolor1}
+		\newcommand{\BoxLS}{\LSa}
+		\newcommand{\WhisCol}{mycolor1}
+		\newcommand{\WhisLS}{\LSc}
+		\newcommand{\WhisLSlim}{\LSa}
+		\newcommand{\OutCol}{mycolor2}
+		\newcommand{\OutMark}{+}
+%
+% 	>>> TO ENABLE THE COMMANDS ABOVE, THE FOLLOWING REPLACEMENTS IN TKIZ FILES ARE NECESSARY
+%
+% 		Whisker lines:			[color=black,dashed,forget plot]
+% 		--> replace with 		[color=\WhisCol, \WhisLS, forget plot]
+%
+% 		Whisker limits: 		[color=black,solid,forget plot]
+% 		--> replace with 		[color=\WhisCol, \WhisLSlim, forget plot]
+%
+% 		Boxes: 					[color=blue,solid,forget plot]
+% 		--> replace with 		[color=\BoxCol, \BoxLS, forget plot]
+%
+% 		Median: 				[color=red,solid,forget plot]
+% 		--> replace with 		[color=\MedCol, \MedLS, \MedLW, forget plot]
+%
+% 		Outliers: 				[color=black,only marks,mark=+,mark options={solid,draw=red},forget plot]
+% 		--> replace with 		[color=\OutCol, only marks, mark=\OutMark, mark options={solid,draw=\OutCol}, forget plot]
+%
+%
+% 	>>> B O X P L O T   ONE-THIRD-OCTAVE BAND
+% 		--> F M I N = 50 HZ !!		(Means that x=1 corresponds to 50 Hz tob)
+% 					-----------
+\pgfplotsset{boxplotTobStartFreq50 axis style/.append style={ % Einstellung für X-Achsen in Diagrammen
+		xmin=0.5,
+		xmax=21.5, % Not esentially necessary (For Start %0Hz with tobs, 21 corresponds to 5000 Hz)
+		xlabel= One-third-octave-band centre frequency in \si{\Hz},
+		xtick=         {2,      5,      8,     11,   14,             17,             20}, 
+		xticklabels={{$63$},{$125$},{$250$},{$500$},{$1$\si{\kilo}},{$2$\si{\kilo}},{$4$\si{\kilo}}},		
+		minor xtick={1, 3,4, 6,7, 9,10, 12,13, 15,16, 18,19, 21},
+		legend columns=1,
+		legend pos= north east,
+		yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=2},
+	}              
+}
+%
+% 	>>> B O X P L O T   ONE-THIRD-OCTAVE BAND
+% 		--> F M I N = 100 HZ !!		(Means that x=1 corresponds to 100 Hz tob)
+% 					-----------
+\pgfplotsset{boxplotTobStartFreq100 axis style/.append style={ % Einstellung für X-Achsen in Diagrammen
+		xmin=0.5,
+		xmax=18.5, % Not esentially necessary (For Start %0Hz with tobs, 21 corresponds to 5000 Hz)
+		xlabel= One-third-octave-band centre frequency in \si{\Hz},
+		xtick=        {-1,      2,      5,      8,    11,            14,             17}, 
+		xticklabels={{$63$},{$125$},{$250$},{$500$},{$1$\si{\kilo}},{$2$\si{\kilo}},{$4$\si{\kilo}}},		
+		minor xtick={-2, 0,1, 3,4, 6,7, 9,10, 12,13, 15,16, 18},
+		legend columns=1,
+		legend pos= north east,
+		yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=2},
+	}              
+}
+
+
+% -------------------------------------------------- 
+% >>> DEFAULT SETTINGS FOR SOUND REDUCTION INDEX
+%
+\pgfplotsset{soundreductionR axis style/.append style={ % Einstellung für logarithmische X-Achsen in Diagrammen
+		width=0.9*\fwidthDef,
+		height=14/10*0.9*\fwidthDef,
+		clip mode=individual, % verhindert, dass die Marker alles Überlagern
+		legend pos =north west,
+		ymin=10,
+		ymax=80,
+		xmin=50,
+		xmax=5000,
+		legend columns=1,
+		scale only axis,
+		ylabel= \acs{R} in \si{\decibel}, 
+		xlabel= \acs{f} in \si{\Hz},
+		}}
+%
+\pgfplotsset{soundreductionDeltaR axis style/.append style={ % Einstellung für logarithmische X-Achsen in Diagrammen
+		width=\fwidth,
+		height=6/10*\fwidth,
+		clip mode=individual, % verhindert, dass die Marker alles Überlagern
+		legend pos =north west,
+		ymin=-15,
+		ymax=15,
+		xmin=50,
+		xmax=5000,
+		legend columns=1,
+		scale only axis,
+		ylabel= $\Delta$ \acs{R} in \si{\decibel}, 
+		xlabel= \acs{f} in \si{\Hz},
+}		    }
+
+
+% Verlustfaktor
+
+% Bode plot
+
+% Admittanzen
+
+% ....

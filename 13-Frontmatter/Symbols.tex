@@ -1,0 +1,645 @@
+%
+% -----------------------------------------------------
+% > > > > > >          R E A D M E          < < < < < <
+% -----------------------------------------------------
+%
+% Die jeweiligen Abschnitte müssen auskommentiert werden 
+% wenn kein Symbol daraus im Dokument verwendet wird. 
+% Sonst erscheint die Fehlermeldung "missing \item"
+%
+%
+% -----------------------------------------------------
+% >>>> A N F A N G 
+% 
+% L A T E I N I S C H E   B U C H S T A B E N
+% -----------------------------------------------------
+%
+\section*{Lateinische Buchstaben} 		% * heißt, dass keine Nummer vor die Überschrift kommt
+%
+\begin{acronym}[-------------------] 	% In eckigen Klammern den längsten Ausdruck der Liste einfügen für Einzug
+	%	
+	% Acronym Definition
+	%					\acro{KÜRZEL}[ABKÜRZUNG]{\acrounit{SI-EINHEIT}BESCHREIBUNG}
+	%
+	%
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	% >>> G R O ß B U C H S T A B E N
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	%
+    %
+	% --------------------
+	\acro{A} 	[$A$]				{\acrounit{\m\squared}
+		%	Equivalent absorption area in a diffuse acoustic field
+		Äquivalente Absoptionsfläche in einem diffusen Schallfeld
+	} % DIN EN ISO 80000-8:2008-01, p.16
+	% --------------------
+	\acro{B}	[$B_{\mathrm{p}}$]	{\acrounit{\N\m}
+		%	Bending stiffness per unit width of plate
+		Biegesteifigkeit je Meter Plattenbreite
+	}
+	% --------------------
+	\acro{DTF} 	[$D_\mathrm{TF}$]				{\acrounit{\decibel}
+		%	Transmission function
+		Übertragungsfunktion
+	} % DIN EN ISO 10848-1:2018-2 Abschnitt 3.5
+	% --------------------
+	\acro{DTFav} 	[$D_\mathrm{TF,av}$]				{\acrounit{\decibel}
+		%	Spatioal average transmission function
+		Mittlere Übertragungsfunktion
+	} % DIN EN ISO 10848-1:2018-2 Abschnitt 3.6
+	% --------------------
+	\acro{E}	[$E$]				{\acrounit{\N\per\m\squared}
+		%	Young's modulus
+		Elastizitätsmodul
+	} % DIN EN ISO 80000-4:2013-08, p.14
+	% --------------------
+	\acro{Ep}	[$E_{\mathrm{p}}$]	{\acrounit{\joule}
+		%	Potential energy
+		Potentielle Energie
+	} % DIN EN ISO 80000-4:2013-08, p.18
+	% --------------------
+	\acro{Ek}	[$E_{\mathrm{k}}$]	{\acrounit{\joule}
+		%	Kinetic energy
+		Kinetische Energie
+	} % DIN EN ISO 80000-4:2013-08, p.18
+	% --------------------
+	\acro{F}	[$F$]				{\acrounit{\N}
+		%	Force
+		Kraft
+	} % DIN EN ISO 80000-4:2013-08, p.8
+	% --------------------
+	\acro{G}	[$G$]				{\acrounit{\N\per\m\squared}
+		%	Shear modulus
+		Schubmodul
+	} % DIN EN ISO 80000-4:2013-08, p.14
+	% --------------------
+	\acro{I}	[$\mathbf{I}$]		{\acrounit{\watt\per\m\squared}
+		%	Intensity
+		Intensität
+	} % DIN EN ISO 80000-8:2008-01, p.12
+	% --------------------
+	\acro{K}	[$ K $]				{\acrounit{\pascal}
+		%	Bulk modulus
+		Kompressionsmodul
+	} % DIN EN ISO 80000-4:2013-08, p.14
+	% --------------------
+	\acro{Kij}	[$ K_{ij} $]		{\acrounit{\dB}
+		%	Vibration reduction index
+		Stoßstellendämm-Maß zwischen Bauteil 
+		$i$ und $j$
+	}
+	% --------------------
+	\acro{La} 	[$L_a$] 			{\acrounit{\dB}
+		%	Acceleration level with 
+		Beschleunigungspegel mit
+		$a_0=\SI{1e-6}{\m\per\s\squared}$
+	} 		
+	% --------------------
+	\acro{Lav} 	[$L_\mathrm{av}$]				{\acrounit{\decibel}
+		%	Transmission function
+		Mittlerer Schalldruckpegel im Empfangsraum (ISO 10848-1:2017)
+	} % DIN EN ISO 10848-1:2018-2 Abschnitt 3.5
+	% -------------------- 
+	\acro{LI} 	[$L_a$] 			{\acrounit{\dB}
+		%	Intensity level with 
+		Intensitätspegel mit
+		$I_0=\SI{1e-12}{\watt}$
+	} 		
+	% -------------------- 
+	\acro{Lp} 	[$L_p$] 			{\acrounit{\dB}
+		%	Sound pressure level with 
+		Schalldruckpegel mit	
+		$p_0=\SI{20e-6}{\pascal}$
+	} % DIN EN ISO 80000-8:2008-01, p.14
+	% --------------------
+	\acro{Ln}	[$L_{\mathrm{n}}$]	{\acrounit{\decibel}
+		%	Normalized impact sound pressure level
+		Norm-Trittschallpegel im Prüfstand
+	}
+	% --------------------
+	\acro{Lne0f}	[$L_{\mathrm{ne0,f}}$]	{\acrounit{\decibel}
+		%	Normalized flanking equipment sound pressure level
+		Norm-Flankengeräteschallpegel
+	} % ISO 10848-1:2017
+	% --------------------
+	\acro{LW} 	[$L_W$] 			{\acrounit{\dB}
+		%	Sound power level with 
+		Schallleistungspegel mit
+		$P_0=\SI{1e-12}{\watt}$
+	} % DIN EN ISO 80000-8:2008-01, p.14
+	% --------------------
+	\acro{Lv} 	[$L_v$] 			{\acrounit{\dB}
+		%	Velocity level with 
+		Schnellepegel mit
+		$v_0=\SI{1e-9}{\m\per\s}$
+	}
+	% -------------------- 
+	\acro{N}	[$N$]				{\acrounit{-}
+		%	Modes in band
+		Modenanzahl je Frequenzband
+	}
+	% --------------------
+	\acro{P}	[$P$]				{\acrounit{\m}
+		%	Perimeter
+		Umfang
+	} % ToDo ändern
+	% --------------------
+	\acro{P}    [$P$] 				{\acrounit{\watt}
+		%	Power
+		Leistung
+	} % DIN EN ISO 80000-8:2008-01, p.14
+	% --------------------
+	\acro{R}	[$R$]				{\acrounit{\dB}
+		%	Sound reduction index
+		Schalldämm-Maß
+	}% DIN EN ISO 80000-8:2008-01, p.16
+	% --------------------
+	\acro{Rij}	[$ R_{ij} $]		{\acrounit{\dB}
+		Flanking sound reduction index between element   
+		% Flankendämm-Maß zwischen Element 
+		$i$ und $j$
+	}
+	% --------------------
+	\acro{S}	[$S$]				{\acrounit{\m\squared}
+		%	Area
+		Fläche
+	} % DIN EN ISO 80000-3:2013-08, p.10
+	% --------------------
+	\acro{T}	[$T$]				{\acrounit{\s}
+		%	Period duration
+		Periodendauer
+	} % DIN EN ISO 80000-3:2013-08, p.8
+	% --------------------
+	\acro{T60}	[$T_{60}$]			{\acrounit{\s}
+		%	Reverberation time, linear regression over a range of 
+		Nachhallzeit, lineare Regression über einen Abfall von
+		\SI{60}{\dB}
+	} % DIN EN ISO 80000-8:2008-01, p.16
+	% --------------------
+	\acro{V}	[$V$]				{\acrounit{\m\cubed}
+		%	Volume
+		Volumen
+	} % DIN EN ISO 80000-3:2013-08, p.10
+	% --------------------
+	\acro{W}	[$W$]				{\acrounit{\watt}
+		%	Mechanic power
+		Mechanische Leistung
+	} % DIN EN ISO 80000-4:2013-08, p.18
+	% --------------------
+	\acro{Y}	[$Y$]				{\acrounit{\m\per\newton\s}
+		%	Mobility
+		Admittanz
+	}
+	% --------------------
+	\acro{Zc}   [$Z_{\mathrm{c}}$] 	{\acrounit{\pascal\s\per\m}
+		%	Characteristic impedance of a medium
+		Charakteristische Impedanz eines Mediums 
+	} % DIN EN ISO 80000-8:2008-01, p.12
+	% --------------------
+	\acro{Zm}   [$Z_{\mathrm{m}}$] 	{\acrounit{\newton\s\per\m}
+		%	Mechanical impedance
+		Mechanische Impedanz
+	} % DIN EN ISO 80000-8:2008-01, p.12
+	% --------------------
+	%
+	%
+	%
+	%
+	%
+	\bigskip 	% Größerer vertikaler Abstand
+	%
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	% >>> K L E I N B U C H S T A B E N
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	%
+	% --------------------
+	\acro{a}	[$\mathbf{a}$]		{\acrounit{\m\per\s\squared}
+		%	Acceleration
+		Beschleunigung
+	} % DIN EN ISO 80000-8:2008-01, p.10
+	% --------------------
+	\acro{a}	[$a$]				{\acrounit{\si{\m}}
+		%	equivalent absorption length
+		äquivalente Absorptionslänge
+	}
+	% --------------------
+	\acro{c}	[$c$]				{\acrounit{\m\per\s}
+		%	Phase velocity of propagation
+		Ausbreitungsgeschwindigkeit der Phase einer Welle
+	} % DIN EN ISO 80000-8:2008-01, p.10
+	% --------------------
+	\acro{cg}	[$c_{\mathrm{g}}$]	{\acrounit{\m\per\s}
+		%	Group velocity of propagation
+		Gruppengeschwindigkeit
+	} % DIN EN ISO 80000-8:2008-01, p.10
+	% --------------------
+	\acro{d}	[$d$]				{\acrounit{\m}
+		%	Distance
+		Abstand
+	} % DIN EN ISO 80000-3:2013-08, p.8
+	% --------------------
+	\acro{d}	[$d$]				{\acrounit{\m}
+		%	Thickness
+		Dicke
+	} % DIN EN ISO 80000-3:2013-08, p.8
+	% --------------------
+	\acro{f}	[$f$]				{\acrounit{\Hz}
+		%	Frequency
+		Frequenz
+	} % DIN EN ISO 80000-8:2008-01, p.8
+	% --------------------
+	\acro{fc}	[$f_{\mathrm{c}}$] 	{\acrounit{\Hz}
+		%	Critical frequency
+		Koinzidenzgrenzfrequenz
+	}
+	% --------------------
+	\acro{k}	[$k$]				{\acrounit{\radian\per\m}
+		%	Wave number
+		Kreiswellenzahl
+	} % DIN EN ISO 80000-8:2008-01, p.8
+	% --------------------
+	\acro{j}	[$\mathrm{j}$]		{\acrounit{-}
+		%	Imaginary unit $\mathrm{j}^2=-1$
+		Imaginäre Einheit $\mathrm{j}^2=-1$
+	} % DIN EN ISO 80000-2:2013-08, p.21
+	% --------------------
+	\acro{m}	[$m$]				{\acrounit{\kg}
+		%	Mass
+		Masse
+	} % DIN EN ISO 80000-4:2013-08, p.6
+	% --------------------
+	\acro{l}	[$l$]				{\acrounit{\m}
+		%	Length
+		Länge
+	} % DIN EN ISO 80000-4:2013-08, p.8
+	% --------------------
+	\acro{lij}	[$ l_{ij} $]		{\acrounit{\m}
+		%	Junction length between elements $ i $ and $ j $
+		gemeinsame Kopplungslänge von Bauteil $i$ und $j$ 
+	}
+	% --------------------
+	\acro{n-2D}	[$n^{\mathrm{2D}}$]	{\acrounit{\radian\per\s}
+		%	Modal density of a plate
+		Modale Dichte einer Platte
+	}
+	% --------------------
+	\acro{n-3D}	[$n^{\mathrm{3D}}$]	{\acrounit{\radian\per\s}
+		%	Modal density of a volume
+		Modale Dichte eines Volumens
+	}
+	% --------------------
+	\acro{p}	[$p$]				{\acrounit{\pascal}
+		%	Sound pressure
+		Schalldruck
+	} % DIN EN ISO 80000-8:2008-01, p.10
+	% --------------------
+	\acro{ps}	[$p_\mathrm{s}$]	{\acrounit{\pascal}
+		%	Static pressure
+		Statischer Druck
+	} % DIN EN ISO 80000-8:2008-01, p.10
+	% --------------------
+	\acro{t}	[$t$]				{\acrounit{\s}
+		%	Time
+		Zeit
+	} % DIN EN ISO 80000-3:2013-08, p.12
+	% --------------------
+	\acro{v}	[$\mathbf{v}$]		{\acrounit{\m\per\s}
+		%	Velocity
+		Schallschnelle
+	} % DIN EN ISO 80000-8:2008-01, p.10
+	% --------------------
+	%
+	%
+\end{acronym}
+%
+% -----------------------------------------------------
+% L A T E I N I S C H E   B U C H S T A B E N
+% 
+% >>>> E N D E
+% -----------------------------------------------------
+%
+%
+%
+%
+%
+%
+%
+% -----------------------------------------------------
+% >>>> A N F A N G
+% 
+% G R I E C H I S C H E   B U C H S T A B E N
+% -----------------------------------------------------
+
+\section*{Griechische Buchstaben}
+% 
+%
+\begin{acronym}[-------------------] 	% In eckigen Klammern den längsten Ausdruck der Liste einfügen für Einzug
+	%	
+	% Acronym Definition
+	%					\acro{KÜRZEL}[ABKÜRZUNG]{\acrounit{SI-EINHEIT}BESCHREIBUNG}
+	%
+	%
+	%
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	% >>> K L E I N E   G R.  B U C H S T A B E N
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	%
+	% --------------------
+	\acro{alpha}	[$\alpha$]		{\acrounit{-}
+		%	Absorption coefficient
+		Absorptionsgrad
+	} % DIN EN ISO 80000-8:2008-01, p.16
+	% --------------------
+	\acro{alphaD}	[$\alpha$]		{\acrounit{\neper\per\m}
+		%	Attenuation coeffient
+		Dämpfungskoeffizient
+	} % DIN EN ISO 80000-8:2008-01, p.16
+	% --------------------
+	\acro{lambda}	[$\lambda$]		{\acrounit{\m}
+		%	Wave length
+		Wellenlänge
+	} % DIN EN ISO 80000-8:2008-01, p.8
+	% --------------------
+	\acro{gamma}    [$\gamma$]  	{\acrounit{-}
+		%	Shear strain
+		Scherverformung
+	} % DIN EN ISO 80000-4:2013-08, p.12
+	% --------------------
+	\acro{mu}		[$\mu$]			{\acrounit{-}
+		%	Poisson's ratio
+		Querkontraktionszahl
+	} % DIN EN ISO 80000-4:2013-08, p.14
+	% --------------------
+	\acro{rho}		[$\rho$]		{\acrounit{\kg\per\m\cubed}
+		%	Density
+		Rohdichte
+	} % DIN EN ISO 80000-8:2008-01, p.8
+	% --------------------
+	\acro{rhoA}		[$\rho_A$]		{\acrounit{\kg\per\m\squared}
+		%	Mass per unit area
+		Flächenbezogene Masse
+	} % DIN EN ISO 80000-4:2013-08, p.6, cf. % DIN EN ISO 80000-3:2013-08, p.10
+	% --------------------
+	\acro{rhol}		[$\rho_l$]		{\acrounit{\kg\per\m}
+		%	Mass per unit length
+		Längenbezogene Masse
+	} % DIN EN ISO 80000-4:2013-08, p.6
+	% --------------------
+	\acro{sigma}    [$\sigma$]  	{\acrounit{-}
+		%	Radiation efficiency
+		Abstrahlgrad
+	}
+	% --------------------
+	\acro{sigma}    [$\sigma$]  	{\acrounit{\newton\per\meter\squared}
+		%	Principal stress
+		Mechanische Normalspannung
+	} % DIN EN ISO 80000-4:2013-08, p.12
+	% --------------------
+	\acro{tau}		[$\tau$]		{\acrounit{-}
+		%	Transmission coefficient
+		Transmissionsgrad
+	} % DIN EN ISO 80000-8:2008-01, p.16
+	% --------------------
+	\acro{tau}		[$\tau$]		{\acrounit{\newton\per\m\squared}
+		%	Shear stress
+		Schubspannung, Scherspannung
+	} % DIN EN ISO 80000-4:2013-08, p.12
+	% --------------------
+	\acro{theta}	[$\theta$]		{\acrounit{\kelvin}
+		%	Temperature
+		Temperatur
+	} % DIN EN ISO 80000-5:2013-08, p.6
+	% --------------------
+	\acro{kappa}	[$\kappa$]		{\acrounit{-}
+		%	Shear correction factor
+		Brechzahl
+	} % ToDo Namen ändern
+	% --------------------
+	\acro{eta}		[$\eta$]		{\acrounit{-}
+		%	Loss factor
+		Verlustfaktor
+	}
+	% --------------------
+	\acro{phi}		[$\phi$]		{\acrounit{\radian}
+		%	Angular dimension
+		Winkelmaß
+	}
+	% --------------------
+	\acro{varphi}	[$\varphi$] 	{\acrounit{-}
+		%	Relative humidity
+		Relative Luftfeuchte
+	} % DIN EN ISO 80000-5:2013-08, p. 19
+	% --------------------
+	\acro{omega}	[$\omega$]		{\acrounit{\radian\per\s}
+		%	Angular frequency
+		Kreisfrequenz	
+	} % DIN EN ISO 80000-3:2013-08, p.8
+	% --------------------
+	%
+	%
+	%
+	%
+	%
+	\bigskip 	% Größerer vertikaler Abstand
+	%
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	% >>> G R O ß E   G R.  B U C H S T A B E N
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	%
+	% --------------------
+	\acro{gamma'bc}	[$\Gamma'_{\mathrm{BC}}$]	{\acrounit{-} 
+		Factor for boundary condition
+	}
+	% --------------------
+	\acro{gamma'1}	[$\Gamma'_{\mathrm{1}}$]	{\acrounit{-} 
+		Factor for boundary condition
+	}
+	% --------------------
+	\acro{gamma'2}	[$\Gamma'_{\mathrm{2}}$]	{\acrounit{-} 
+		Factor for boundary condition
+	}
+	% --------------------
+	%
+	%
+\end{acronym}
+%
+% -----------------------------------------------------
+% G R I E C H I S C H E   B U C H S T A B E N
+%
+% >>>> E N D E
+% -----------------------------------------------------
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+% -----------------------------------------------------
+% >>>> A N F A N G
+%
+% T I E F S T E L L U N G E N
+% -----------------------------------------------------
+%
+\section*{Tief- und Hochstellungen} 				% * heißt, dass keine Nummer vor die Überschrift kommt
+%
+\begin{acronym}[------] 					% In eckigen Klammern den längsten Ausdruck der Liste einfügen für Einzug
+	%	
+	% Acronym Definition
+	%					\acro{KÜRZEL}[ABKÜRZUNG]{\acrounit{SI-EINHEIT}BESCHREIBUNG}
+	%
+	%
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	% >>> T I E F S T E L L U N G E N
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	%
+	% --------------------
+	\acro{subAir}	[$_{\mathrm{air}}$]{
+		%	Air
+		Luft
+	}
+	% --------------------
+	\acro{subB}		[$_{\mathrm{B}}$]{
+		%	Bending
+		Biegung
+	}
+	% --------------------
+	\acro{subc}     [$_{\mathrm{c}}$]{
+		% Coincidence
+		Koinzidenz
+	}
+	% --------------------
+	\acro{subdp}	[$_{\mathrm{dp}}$]{
+		Driving-point
+	}
+	% --------------------
+	\acro{seff}		[$_{\mathrm{eff}}$]{
+		%	Effective
+		Effektiv
+	}
+	% --------------------
+	\acro{subint}	[$_{\mathrm{int}}$]{
+		Intern
+	}
+	% --------------------
+	\acro{sL}		[$_{\mathrm{L}}$]{
+		Longitudinal
+	}
+	% --------------------
+	\acro{sublab}	[$_{\mathrm{lab}}$]{
+		Labor situation
+	}
+	% --------------------
+	\acro{subn}	[$_{\mathrm{n}}$]{
+		% Normalized to absorption area
+		Normiert auf Bezugsabsorptionsfläche \acs{A}
+	}
+	% --------------------
+	\acro{subrad}	[$_{\mathrm{rad}}$]{
+		%	Radiation
+		Abstrahlung
+	}
+	% --------------------
+	\acro{sR}		[$_{\mathrm{R}}$]{
+		Rayleigh surface wave
+	}
+	% --------------------
+	\acro{subR}		[$_{\mathrm{R}}$]{
+		% Receiver
+		Empfangsstruktur (Receiver)
+	}
+	% --------------------
+	\acro{subRR}    [$_{\mathrm{RR}}$]  {
+		%	Recieving room
+		Empfangsraum
+	}
+	% --------------------
+	\acro{subsitu}	[$_{\mathrm{situ}}$]{
+		In situ
+	}
+	% --------------------
+	\acro{subSR}    [$_{\mathrm{SR}}$]  {
+		%	Sending room
+		Senderaum
+	}
+	% --------------------
+	\acro{subS}		[$_{\mathrm{S}}$]{
+		% Source
+		Quelle (Source)
+	}
+	% --------------------
+	\acro{subtot}	[$_{\mathrm{tot}}$]{
+		Total
+	}
+	% --------------------
+	\acro{sT}		[$_{\mathrm{T}}$]{
+		Transversal
+	}
+	% --------------------%
+	%
+	%
+	%
+	%
+	\bigskip 	% Größerer vertikaler Abstand
+	%
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	% >>> H O C H S T E L L U N G E N
+	% - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	%
+	\acro{Prime}		[$^\prime$]{
+		In-situ (inklusive aller Flankenwege)
+	}
+	% --------------------%
+	%
+	%
+\end{acronym}
+
+% -----------------------------------------------------
+% T I E F S T E L L U N G E N
+%
+% >>>> E N D E
+% -----------------------------------------------------
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+% -----------------------------------------------------
+% >>>> A N F A N G
+%
+% M A T H.   O P E R A T O R E N
+% -----------------------------------------------------
+%
+\section*{Mathematische Operatoren} 				% * heißt, dass keine Nummer vor die Überschrift kommt
+%
+\begin{tabular}{ll}
+$x$                         & Platzhalter\\
+$\underline{x}$             & Komplexer Wert\\
+% $\underline{x}^\ast$        & komplex konjugiert\\
+% $\vert x \vert$             & Betrag\\
+% $\Re\{x\}$                  & Realteil\\
+% $\Im\{x\}$                  & Imaginärteil\\
+% $\hat{x}$                   & Spitzenwert\\
+% $\tilde{x}$                 & Effektivwert\\
+% $\langle x \rangle_{t}$     & zeitlicher Mittelwert\\
+% $\langle x \rangle_{s}$     & räumlicher Mittelwert\\
+% $\langle x \rangle_{t,s}$   & zeitlich und räumlicher Mittelwert
+\end{tabular}
+%
+%
+%
+% -----------------------------------------------------
+% M A T H.   O P E R A T O R E N
+%
+% >>>> E N D E
+% -----------------------------------------------------

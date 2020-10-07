@@ -1,0 +1,51 @@
+% This file was created by matlab2tikz.
+%
+% ADDITIONAL INFORMATION FOR THIS DATASET:
+% --------------------------------------
+% PATH: N:\01_FuE\07_NawaRo\SEA\TransmissionLossCB16\
+% FILENAME: ExpVsSEAModellFPY2-EMODadj-TL-plot.fig
+% LAST MODIFIED: 16-Jan-2018 19:33:38
+% FIGURE NAME: n:\01_FuE\07_NawaRo\SEA\TransmissionLossCB16\ExpVsSEAModellFPY2-EMODadj.txt-TL-plot
+% ANNOTATIONS: VAOne Datei 16mmSpanplatte_Nusser.va1
+%               
+%               
+%               
+%               
+% --------------------------------------
+%
+%\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+%\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+%
+\begin{tikzpicture}[trim axis left]
+\begin{semilogxaxis}[%
+soundreductionR axis style, % Default parameter for axis, look at: 13-Frontmatter/PlotProperties.sty
+]
+\addplot [color=mycolor1,LMa]
+table[row sep=crcr]{%
+	50	20.1\\
+	63	16.6\\
+	80	14\\
+	100	20.4\\
+	125	18.7\\
+	160	20.8\\
+	200	23.2\\
+	250	25.3\\
+	315	25.8\\
+	400	26.8\\
+	500	27.6\\
+	630	28.4\\
+	800	30\\
+	1000	31.3\\
+	1250	32.2\\
+	1600	31.8\\
+	2000	27\\
+	2500	23.4\\
+	3150	26.7\\
+	4000	29.1\\
+	5000	32.2\\
+};
+\addlegendentry{Messung FPY2};
+
+
+\end{semilogxaxis}
+\end{tikzpicture}%

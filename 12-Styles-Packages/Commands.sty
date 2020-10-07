@@ -1,0 +1,59 @@
+\ProvidesPackage{\STYPath Commands}
+%
+% ==================================================
+%   C O M M A N D S   A N D   V A R I A B L E S
+% ==================================================
+
+% This .sty file file contains:
+% --> important constants related with line spacing
+% --> general commands for terms like "Matlab"
+
+
+% -------------------------------------------------- 
+% >>> CONSTANTS FOR LENGTHS AND SPACES
+%  
+\newcommand{\vspChapFM}{5}              % n*\topskip for vspace above headings in frontmatter
+\newcommand{\vspChapMM}{15}             % n*\topskip for vspace above headings in mainmatter
+\newcommand{\vspChapBM}{5}              % n*\topskip for vspace above headings in backmatter
+\newcommand{\AcrItemSep}{0.5ex}         % Separation of entries in list of symbols and acronyms
+										% 1ex is the height of a small "x" in current fontsize
+\newcommand{\AcrParSkip}{0ex}           % parskip for list of symbols and acronyms
+
+
+% -------------------------------------------------- 
+% >>> TERMS ...
+%
+% Comapnies, products 
+\newcommand{\ansys}{\textsc{Ansys}\textsuperscript{\textregistered}\xspace}
+\newcommand{\BK}{Brüel \& Kj\ae r\xspace}
+\newcommand{\matlab}{\textsc{Matlab}\textsuperscript{\textregistered}\xspace}
+\newcommand{\mescope}{\textsc{ME'scope}\textsuperscript{\textregistered}\xspace}
+\newcommand{\mbbmvas}{Müller-BBM VibroAkustik Systeme GmbH\xspace}
+\newcommand{\mbbm}{Müller-BBM GmbH\xspace}
+\newcommand{\mreverb}{m$|$reverb\xspace}
+\newcommand{\pak}{\textsc{PAK}\xspace}
+\newcommand{\pakmk}{\textsc{PAK MK\textsf{II}}\xspace}
+\newcommand{\Regnauer}{Regnauer Fertigbau GmbH \& Co. KG\xspace}
+\newcommand{\vaone}{\textsc{VAOne}\textsuperscript{\textregistered}\xspace}
+%
+% Abbreviations
+\newcommand{\eg}{e.\,g.\;}
+\newcommand{\ie}{i.\,e.\;}
+\newcommand{\etal}{et\,al.\;}
+
+%
+% Other terms
+\newcommand{\tob}{one-third octave band\xspace}
+\newcommand{\tobs}{one-third octave bands\xspace}
+\newcommand{\bcf}{band centre frequency\xspace}
+\newcommand{\insitu}{in-situ\xspace}
+\newcommand{\teststruct}{test structure\xspace}
+
+
+% -------------------------------------------------- 
+% >>> SYMBOLS ...
+% 
+\newcommand{\re}{re\xspace}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\FourierTrans}{\laplace}

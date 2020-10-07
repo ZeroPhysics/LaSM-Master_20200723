@@ -1,0 +1,553 @@
+\ProvidesPackage{\STYPath GlobalStyle}
+%
+% ==================================================
+%       M A I N   P A C K A G E S
+% ==================================================
+
+%%% --------------------------------------------------
+%% >>> FONTENC - Input encoding
+%
+% \usepackage[T1]{fontenc} 
+
+% --------------------------------------------------
+% >>> BABEL - Language options 			
+%
+%%%\usepackage[ngerman,english]{babel}     % Das Beispieldokument ist in Deutsch,   j   %Deutsch und Englisch, aber führt momentan zu Problemen
+\usepackage[ngerman]{babel}     % Das Beispieldokument ist in Deutsch,
+										% daher wird mit Hilfe des babel-Pakets
+										% über Option ngerman auf deutsche Begriffe
+										% und gleichzeitig Trennmuster nach den
+										% aktuellen Rechtschreiberegeln umgeschaltet.
+										% Alternativen und weitere Sprachen sind
+										% verfügbar (siehe <http://ctan.org/pkg/babel>). 
+
+
+% -------------------------------------------------- 
+% >>> FONT AND FORMAT OF FONT      		
+
+		
+\usepackage{lmodern}         			% Latin Modern verändert die verwendete Schriftart
+										% Der Hauptunterschied ist die Darstellung der Schrift
+										% innerhalb von pdf Dateien. Der Latex Standard
+										% (Computer Modern) wirkt in pdfs pixelig.
+										
+
+% -------------------------------------------------- 
+% >>> NOWIDOW - Prevent widows and orphans
+%
+\usepackage[defaultlines=2, 			% Min lines to be kept after or before the page break
+all 						% Widow and orphan penalties for whole document
+]{nowidow}
+										
+										
+
+% ==================================================
+%       K O M A   S c r i p t   o p t i o n s
+% ==================================================
+% 	Wertzuweisungen mit LATEX-Längen oder LATEX-Zählern sollten daher nie
+%   per \documentclass oder \usepackage, sondern immer mit den nachfolgend dokumentierten
+%	Anweisungen \KOMAoptions oder \KOMAoption vorgenommen werden.
+\KOMAoptions{
+	paper      	= a4,                   % Papierformat (nicht zwingend erforderlich, 
+										% da A4 standard in KOMA)       
+	pagesize 	= auto,                 % Mit der Option pagesize kann eingestellt werden, für 
+										% welchen Ausgabetreiber die Papiergröße in das 
+										% Ausgabedokument geschrieben wird.
+										% (Empfehlung von KOMA: auto)
+										% >>> Format Kopf- und Fußzeile 
+	headsepline = false, 				% horizontale Linie unter Kolumnentitel
+	headinclude = false,    			% Kopfzeile zum Textkörper (für DIV) zählen: true oder false  
+										% Endscheident ist die sehr unscharfe Wirkung
+										% Bei Verwendung von Kolumnentitel und Strich unter Kopfzeile 
+										% sollte "true" gewählt werden
+	footinclude = false,   				% Fußzeile zum Textkörper (für DIV) zählen true/false
+										%
+	%headlines 	= 1.25,   				% Berücksichtigung der Zeilenanzahl der Kopfzeile für das
+	 									% Seitenlayout                            
+										%
+										% >>> Abschnittsumbruch               
+										% Hin und wieder wird ein Layout mit Absatzabstand anstelle des
+	 									% voreingestellten Absatzeinzugs v3.00 gefordert. Die KOMA-Script-
+	 									% Klassen bieten mit der Option "parskip" eine Reihe von Möglichkeiten,
+	 									% um dies zu erreichen.   
+	 									%
+	 									% kein einfrücken des ersten Wortes nach Absatz                           R.Z                              
+	parskip 	= half*,    			% Absätze werden durch einen vertikalen Abstand von einer Zeile
+									 	% gekennzeichnet, Absatzenden durch einen Leerraum von mind. einem
+									 	% Geviert (1 em) der Grundschrift am Ende der letzten Zeile.
+										% TUM: "full": 	Absätze werden durch einen vertikalen Abstand von 
+										% 				einer Zeile gekennzeichnet, Absatzenden durch einen
+										% 				Leerraum von einem Geviert (1 em) der Grundschrift am
+										% 				Ende der letzten Zeile.
+										% "false"": 	Absätze werden durch einen Einzug der ersten Zeilen 
+										% 				von einem Geviert (1 em) gekennzeichnet. Der erste
+										% 				Absatz eines Abschnitts wird nicht eingezogen.	
+										%
+										% >>> Format Beschriftung      
+	captions 	= tableheading,			% Formatanpassung (vertikaler Abstand zwischen Tabelle und
+										% Beschriftung), wenn Tabellen Überschrift
+	captions    = figuresignature,      % verwendet für Abbildungen standardmäßig unterschriften
+										%
+										% >>> Verzeichnisse 
+										% Normalerweise werden Verzeichnisse von Gleitumgebungen – wie das
+										% Tabellen- und das Abbildungsverzeichnis– nicht nummeriert oder in
+										% das Inhaltsverzeichnis aufgenommen.
+	toc=listof,                         % Fügt das Abbildungs- und Tabellenverzeichis ins Inhaltsverzeichnis
+										% ein.	
+	numbers=noendperiod,                % Gleiderungsnummern ohne abschließenden Punkt
+	%toc	= flat, 					% TUM: keine Einrückungen im Inhaltsverzeichnis
+	%toc	= chapterentrydotfill, 		% TUM: Punkte bis zur Seitennummer bei Kapiteln
+	%listof 		= entryprefix,		% TUM: "listof=entryprefix" Präfix für Einträge in Abbildungs- und
+										% Tabellenverzeichnis.
+										% Normalerweise ist es nicht sinnvoll jeden Eintrag in eines der
+										% Verzeichnisse der Gleitumgebungen mit einem Präfix wie »Abbildung«
+										% oder »Tabelle« zu versenden,da natürlich im Abbildungsverzeichnis nur
+										% Abbildungen und im Tabellenverzeichnis nur Tabellen zu finden sind.
+										% Damit hat ein solcher Präfix keinen zusätzlichen Informationswert
+										% und wird in der Voreinstellung auch weggelassen. Mit der Einstellung
+										% listof=entryprefix wird ein solcher Präfix jedoch gesetzt.
+	%listof 		= nochaptergap, 	% TUM: Kein Abstand für Kapiteleinträge in extra Verzeichnissen
+}
+
+
+% --------------------------------------------------
+% >>> KOMA ADJUSTMENTS
+%
+% >>> Schriftformatänderungen
+%
+%\setkomafont{disposition}
+%{\normalcolor\bfseries}     			% Mit dieser Änderung verzichten Sie darauf, für alle 
+%										% Gliederungsebenen serifenlose Schrift voreinzustellen.
+%										% Aus KOMA Script Anleitung
+
+\setkomafont{captionlabel}{				% Abbildungsnummerierung
+	\sffamily\bfseries}	 				% sffamily: Serifenfrei 
+										% bfseries: fett
+%
+\setkomafont{caption}{					% Abbildungsbeschriftungen
+	\small}	 							% Schriftgröße
+%
+%\setkomafont{disposition}{				% TUM Gliederungsüberschriften
+%	\sffamily}	
+%
+%\setkomafont{pagehead}{				% Kopfzeilenschrrift in Serifenlos
+%	\sffamily}
+%
+%
+%\setkomafont{subsection}{\bfseries}
+%
+% >>> "Verzeichnistiefe"									
+\setcounter{tocdepth}{3} 				% "Depth" of entires in table od contents (part=-1, 
+										% chapter=0, section=1, subsection=2, subsubsection=3, ...)
+\setcounter{secnumdepth}				% "Depth" of numbered heading levels 
+{\subsubsectionnumdepth}				% eg. subsubsectionnumdepth
+
+
+% --------------------------------------------------
+% >>> ADJUSTMENTS vertical DISTANCES
+%% Feste Abstände vor und nach Überschriften
+\makeatletter
+\g@addto@macro{\@afterheading}			% \parskip nach Gliederungsbefehlen entfernen
+{\vspace{-\parskip}} 
+\makeatother
+
+\RedeclareSectionCommand[%
+beforeskip=3ex,
+afterskip=3ex
+]{section}
+
+\RedeclareSectionCommand[%
+beforeskip=3ex,
+afterskip=1ex
+]{subsection}
+
+% --------------------------------------------------
+% >>> DIV=LAST - Recalculate type area
+%
+\KOMAoptions{DIV=last}		            % Neuberechnung des Satzspiels 
+										% (nötig nach dem Laden von Paktenen für Schriftart 
+										% oder Schriftbild)
+
+% ==================================================
+%       B I B L I O G R A P H Y
+% ==================================================
+% >>> BIBLATEX
+\usepackage[
+	backend		= biber,            	% biber verwenden (Standardbackend von BibLaTeX)
+	style		= authoryear,      		% Lädt Stil (*.bbx und *.cbx) 
+										% Alternativ-Stile: authoryear, numeric-comp, TUM: apa 
+	block		= space,           		% Abstand zwischen Einträgen in der Bibliographie
+	hyperref	= true,
+	isbn=false, 						% Don't display ISBN and ISSN in references
+	doi=false, 							% Don't display DOI in references
+	url=false]             				% Hyperliks ermöglichen (Paket hyperref nötig!!)
+	{biblatex}                  		% Paket biblatex laden
+
+%\DeclareLanguageMapping{american}{american-apa}
+%\DeclareLanguageMapping{ngerman}{ngerman-apa}	% Notwendig bei Verwendung von style "apa"
+%\DeclareLanguageMapping{english}{english-apa}
+
+\ExecuteBibliographyOptions{        % (bibtex,biber)
+	bibencoding	= utf8,           	% wenn .bib in utf8, sonst ascii
+	maxbibnames=4,              	% Maximale Anzhal von Autorennamen in Bibliographie
+	maxcitenames=2,					% Maximale Anzhal von Autorennamen beim Zitieren
+	sorting=nyt,                	% Sortierung nach Name, Titel, Jahr.
+%	sorting=none,               	% Sortierung nach erscheinung im Text.
+%	uniquename=init,        		% Namen mit Initialen eindeutig machen 
+%									% (benötigt für authoryear-comp)
+	uniquename=false,				% By default, biblatex adds first name initials if different 
+									% authors share the same last name. Use this to turn this off.
+	uniquelist=false, 				% Similar as uniquename but for matching author lists
+	giveninits=true,            	% Vornamen abgekürzt
+	bibwarn		= true,        		% Warnung bei fehlerhafter bib-Datei
+	isbn=false, 					% Don't display ISBN and ISSN in references
+	doi=false, 						% Don't display DOI in references
+	url=false						% Don't display URL in references
+} 
+
+% Zitat-Klammern in eckige wandeln
+\renewcommand*{\mkbibparens}[1]{{\ifcitation{\bibleftbracket#1\bibrightbracket}{\bibleftparen#1\bibrightparen}}}
+
+\DefineBibliographyStrings{english}{%
+	bibliography = {References},   	% Title of Bibliography section
+}
+
+% Remove (n.d.) from @misc bib entries (corresponds to standards)
+% Code externally as it is quite a lot 
+% (found at: https://tex.stackexchange.com/questions/336041/remove-n-d-no-date-from-online-entries-without-dates-in-biblatex)
+% ATTENTION: Works not with apa, works well with authoryear, other styles not tested so far
+% \input{\STYPath Remove_nd_from_misc_BibEntries}
+%
+% Alternative zu "Remove_nd_from_misc_BibEntries"
+% Macht das gleiche wie "Remove_nd_from_misc_BibEntries.tex", scheint jedoch robuster zu sein
+% Kommentar ScFa 04/2019: Macht Probleme in Overleaf, deshalb doch "Remove_nd_from_misc_BibEntries.tex"
+% Wichtig: Normen dann nur mit \citeauthor zitieren! 
+\DeclareLabeldate[misc]{
+	\field{date}
+	\field{year}
+	\field{eventdate}
+	\field{origdate}
+	\field{urldate}
+}
+
+
+% When using babel or polyglossia with biblatex, loading csquotes is recommended to ensure 
+% that quoted texts are typeset according to the rules of your main language.
+\usepackage{csquotes}  
+
+% ==================================================
+%       O T H E R   P A C K A G E S
+% ==================================================
+
+
+% -------------------------------------------------- 
+% >>> ACRONYM
+%       Necessary for list of abbreviations
+%       see also https://mixable.blog/latex-acronym-fuer-formelverzeichnis-mit-einheiten-versehen/
+\usepackage[printonlyused]{acronym} 	%\acf{est} %\acs{a}
+% \newcommand{\acrounit}[1]{
+%   \acroextra{
+%   \makebox[18mm][l]{\si{#1}}}           % 
+% }
+\newcommand{\acrounit}[1]{
+  \acroextra{
+    \hspace{-14mm}\makebox[11mm][l]{\si{#1}}
+  }
+}
+% Um nun bei Formelzeichen auch eine Einheit hinter die Abkürzung einfügen zu können, muss man sich
+% den Befehl \makebox und das von Acronym bereitgestellte \acroextra zu nutze machen.
+% Was tun, wenn die Beschreibung mehrzeilig ist?
+% Ist der Beschreibungstext länger als die Seitenbreite, dann bricht dieser um. 
+% Das Unschöne daran: die zweite Zeile wird unter die Einheit geschoben.
+% Um dem entgegenzuwirken kann man etwas “tricksen”. Die Breite der Abkürzungsspalte einfach 
+% etwas verbreitern und anschließend die Einheit mit einem negativen \hspace{-21mm} wieder nach 
+% links schieben. Die Einheit hängt somit über der Abkürzungsspalte und der Beschreibungstext 
+% kann ganz normal umbrechen. Beim negativen Wert (hier -21 mm) muss man etwas spielen, da die 
+% Breite abhängig vom Text (im nachfolgenden Beispiel “LONGESTLONGEST”) ist.
+	
+% -------------------------------------------------- 
+% >>> AMSMATH
+%       Extension package for LaTeX that provides various features to facilitate writing math 
+%       formulas and to improve the typographical quality of their output.
+\usepackage{amsmath}					% Nececessary to use \eqref{label}
+
+
+% -------------------------------------------------- 
+% >>> BOOKTABS
+% 		For professional tables
+\usepackage{booktabs}
+
+
+% -------------------------------------------------- 
+% >>> GRAPHICX
+\usepackage{graphicx}
+
+
+% -------------------------------------------------- 
+% >>> CALLOUTS
+% 		Annotate pictures
+%
+\usepackage[text=black,
+			background=white,
+			arrow=black
+			]{callouts}
+
+
+% -------------------------------------------------- 
+% >>> CAPTION AND SUBCAPTION      
+% 		Typesetting of sub-captions 
+% 		(using the the sub-caption feature of the caption package).
+%
+\usepackage[
+format 			= hang,   		% plain or hang (hang: white space below label)
+labelsep 		= quad,         % horizontaler Abstand zwischen Label und Text
+singlelinecheck = off,
+justification	= raggedright, 	% Zentriertung des Textes
+skip			= 1.5em,		% vertikaler Abstand zwischen Bild und Text
+figurewithin	= none,         % TUM-Vorgabe Kapitelnummer-Integration: figurewithin = none
+tablewithin		= none,         % TUM-Vorgabe Kapitelnummer-Integration: tablewithin = none
+font			= small,
+]{caption}
+%\setcapindent{1em}					% Abbildungsbeschriftung ab zweiter Zeile eingerückt
+
+%			
+\usepackage[font+=small,		% Font of subcaption
+subrefformat	= parens,		% Klammern für subref
+]{subcaption}
+
+% -------------------------------------------------- 
+% >>> XCOLOR
+%       xcolor provides easy driver-independent access to several kinds of     colors,tints, shades, tones, and mixes of arbitrary colors by         means of color expres-sions like\color{red!50!green!20!blue}
+\usepackage{xcolor}
+%
+% - - - - 
+% !!! Einstellung der Textfarbe für das gesamte Dokument !!!
+% \definecolor{THDunkelgrau}{RGB}{111,111,110}  % TH Ro Dunkelgrau 
+% \color{THDunkelgrau}
+% - - - -
+
+% -------------------------------------------------- 
+% >>> LISTINGS
+%       Package to add source code in pdf
+\usepackage{listings}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
+% -------------------------------------------------- 
+% >>> PGFPLOTS
+%       Draws high quality function plots
+%       --> Based on TIKZ       
+%
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}               % Configures the compatibility layer of pgdplots
+%   Any new features or bugfixes which cause backwards 
+%   compatibility problems need to be activated manually
+%   and explicitly. 
+%   Version 1.3 should at lest be used
+%   Latest version 26.04.2017: 1.14
+%   See: ftp://ftp.fu-berlin.de/tex/CTAN/graphics/pgf/contrib/pgfplots/doc/pgfplots.pdf
+\usepgfplotslibrary{fillbetween}
+
+	
+% -------------------------------------------------- 
+% >>> SIUNITX
+%       Tool to typeset quantities consitently
+\usepackage{siunitx}        
+\sisetup{   
+ 	%locale		= US,               % Use typographic conventions of US (eg "." instead of ",")
+ 	per-mode 	= symbol           	% Use "/" for fractions
+ }  
+
+% -------------------------------------------------- 
+% >>> TABULARX
+\usepackage{tabularx}
+
+
+% -------------------------------------------------- 
+% >>> TIKZ
+%       Creating graphics in LaTeX
+%
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta} 			% Libaray for arrow heads
+\usetikzlibrary{plotmarks} 				% Libray for markers 
+\usetikzlibrary{3d}
+\usetikzlibrary{fit} 					% Library defines (currently only two) options for fitting a  
+% node so that it contains a set of coordinates.
+\usetikzlibrary{backgrounds} 			% This library defines “backgrounds” for pictures. This does 
+% not refer to background pictures, but rather to frames  
+% drawn around and behind pictures. For example, this package 
+% allows you to get a rectangular box around your picture.
+\usetikzlibrary{patterns}				% Schraffuren
+\usetikzlibrary{trees}					% The package trees defines two new growth functions.
+
+
+% -------------------------------------------------- 
+% >>> THREEPARTTABLE
+%       Facilitates tables with (foot) notes
+\usepackage{threeparttable} 
+
+
+% -------------------------------------------------- 
+% >>> THREEPARTTABLE
+%       Facilitates tables with (foot) notes
+\usepackage{threeparttable} 
+
+
+% -------------------------------------------------- 
+% >>> LONGTABLE
+%       Tabellen mit Seitenumbruch
+\usepackage{longtable}
+
+
+% -------------------------------------------------- 
+% >>> INCLUDESVG using svg_laclaro.sty
+% 		Load package and setting to include svg
+% 		The folowing code lines were copied in from:
+%       http://141.60.202.49/MediaWiki/index.php?title=Includesvg_mit_Inkscape
+% 		NOTE: This requires the file op_svg_laclaro.sty in the root directory !!!
+%
+% Additional search path for graphics.
+% You really need this to include svgs from sub- or sup-directories!
+\graphicspath{{./}{./02-Figures/}{../sup-fig-dir/}}
+
+% both NEW and OLD
+%% set inkscape binary path according to operating-system
+\IfFileExists{/dev/null}{%
+	\newcommand{\Inkscape}{inkscape }%
+}{%
+\newcommand{\Inkscape}{"C:/Program Files/Inkscape/inkscape.exe" }%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% NEW %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% http://laclaro.wordpress.com/2013/06/19/includesvg-the-new-way/
+\makeatletter
+% command \ifKOMAClass{<do stuff>}
+\newcommand{\ifKOMAClass}[1]{
+	\@ifundefined{KOMAClassName}{}{#1}
+}
+\makeatother
+% svg-package, edited version with "angle" support. The command "setsvg" ist here called "svgsetup"
+% find the original one at http://www.ctan.org/pkg/svg
+\usepackage{\STYPath svg_laclaro}
+\svgsetup{
+	clean,
+	inkscape=\Inkscape -z -C,
+	pretex=\ifKOMAClass{\usekomafont{caption}}
+}
+
+
+% -------------------------------------------------- 
+% >>> HYPeRREF
+%       Hyperlink im PDF
+\usepackage[bookmarksnumbered=true,
+%
+% >>> LINKING STYLE OPTIONS
+colorlinks=false,           			% True: Links will be coloured, the default colour is red. 
+										%   --> Affects the options linkcolor, filecolor and urlcolor
+linkcolor=blue,             			% Internal links, those generated by cross-referenced elements
+										% like sections, equations, figures ect.
+filecolor=magenta,          			% Links to local files 
+urlcolor=cyan,              			% Links to web sites
+hidelinks,                  			  % Removing color and border in pdf
+%
+% >>> PDF-SPECIFIC OPTIONS 
+%  		Page anchors and labels
+plainpages=false, 						% Make page anchors using the formatted form of the page 
+	 									% number. With this option, hyperref writes different 
+	 									% anchors for pages ‘ii’ and ‘2’. (This is the default  
+	 									% value for the option, which is a good thing…) If the option  
+	 									% is set ‘true’ hyperref writes page anchors as the arabic 
+	 									% form of the page number, rather than the formatted form 
+	 									% that gets printed; this is not usually appropriate. 
+pdfpagelabels, 							% Set PDF page labels; i.e., write the value of \thepage to  
+										% the PDF file so that Acrobat Reader can display the page 
+							 			% number as  (say) ‘ii (4 of 40)’ rather than simply ‘4 of 
+							 			% 40’
+%       Document information                            
+pdftitle={\lasmtitle},
+pdfauthor={\lasmauthor},
+pdfsubject={\lasmtype},
+pdfkeywords={\lasmkeywords},
+pdfstartview={Fit}, 					% Set the startup page view
+pdfdisplaydoctitle=true, 				% display document title instead of file name in title bar
+pdfpagelayout={TwoPageRight} 			% set layout of PDF pages (alt. "SinglePage")
+]{hyperref}
+
+
+% -------------------------------------------------- 
+% >>> IMPORT
+\usepackage{import} 			% kann \subincludefrom{sections/}{section1-1} nutzen um tex Dateien
+								% in großen Dokumenten zu laden aus Unterordner "sections"
+								% man kann trotzdem noch \includeonly{} nutzen
+								
+								
+% -------------------------------------------------- 
+% >>> TODONOTES
+%       Makes three TODO commands available to the user:
+%       \todo[]{}, \missingfigure{} and \listoftodos.
+% 		NOTE: To be loaded as one of the last packages as it requires the packages "ifthen", 
+% 		"xkeyval", "xcolor", "tikz", "calc" and "graphicx" (loaded via tikz). If these packages are 
+% 		not loaded tonotes loads the missing packages with no options. 
+%
+\usepackage{todonotes}
+
+% -------------------------------------------------- 
+% >>> XSPACE
+%       Should be used at the end of a macro designed to be used mainly in text. It adds a space 
+% 		unless the macro is followed by certain punctuation characters.
+%
+\usepackage{xspace}
+
+								
+% \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+% Möglichkeit Dummytext einzufügen
+% -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+\usepackage{blindtext}
+% /////////////////////////////////////////////////////
+
+
+% ==================================================
+%       O W N   P A C K A G E S
+% ==================================================
+
+% -------------------------------------------------- 
+% >>> Commands
+%       Commands for symbols
+%
+\usepackage{\STYPath    Commands}
+
+% -------------------------------------------------- 
+% >>> opHyphenation
+%       Control hyphenation
+%
+\usepackage{\STYPath    Hyphenation} 
+
+% -------------------------------------------------- 
+% >>> PlotProperties
+%       Commands and Default values for plots
+%
+\usepackage{\STYPath    PlotProperties}

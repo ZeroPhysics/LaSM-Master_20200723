@@ -1,0 +1,285 @@
+\section{Structure of template folder}
+
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+\subsection{Folders and Files}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%
+\begin{tikzpicture}[%
+grow via three points={one child at (0.5,-0.5) and
+	two children at (0.5,-0.5) and (0.5,-1.0)},
+edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+%
+\tiny
+%
+\tikzstyle{every node}=[anchor=west]
+\tikzstyle{folder}=[draw=black,fill=white]
+\tikzstyle{file}=[draw=none]
+\tikzstyle{filecontents}=[draw=none,node font=\itshape]]
+%
+\node [folder] {Main folder}
+child { node [folder] {01-Content}
+    child { node [folder] {SampleFiles}}
+    child { node [file] {your *.tex files here}}}
+child [missing] {}
+child [missing] {}
+child { node [folder] {02-Figures}  
+    child { node [folder] {SampleFigs}}
+    child { node [file] {Logo-THRo.eps}}
+    child { node [file] {your figure files here}}}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node [folder] {03-Tables}
+    child { node [file] {Example-data.csv}}
+    child { node [file] {TableLoad.tex}}}
+child [missing] {}
+child [missing] {}
+child { node [folder] {11-DocumentClass}
+    child { node [file] {Memo.cls}}
+    child { node [file] {Minutes.cls}}
+    child { node [file] {TechnicalReport.cls}}
+    child { node [file] {Thesis.cls}}
+    child { node [file] {Paper.cls}}}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node [folder] {12-Styles-Packages}
+    child { node [file] {Commands.sty}}
+    child { node [file] {GlobalStyle.sty}}
+    child { node [file] {Hyphenation.sty}}
+    child { node [file] {\textcolor{gray}{Language.sty (not working yet)}}}
+    child { node [file] {PlotProperties.sty}}
+    child { node [file] {Remove\_nd\_from\_misc\_BibEntries.tex}}
+    child { node [file] {svg\_lacaro.sty}}}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node [folder] {13-Frontmatter}
+    child { node [file] {Abbreviations.tex}}
+    child { node [file] {Abstract.tex}}
+    child { node [file] {Acknowledgments.tex}}
+    child { node [file] {Erklaerung.tex}}
+    child { node [file] {Symbols.tex}}
+    child { node [file] {Titlepage-Basic.tex}}
+    child { node [file] {Titlepage-TechnicalReport.tex}}
+    child { node [file] {Titlepage-Tesis.tex}}}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child [missing] {}
+child { node [file] {LaSM-Master.tex (see section \ref{maintex})}}	
+child { node [file] {Literature.bib}};
+\end{tikzpicture}
+%
+%
+%
+%
+%
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+\subsection{Structure of the LaSM-Master.tex file}
+\label{maintex}
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%
+\begin{tikzpicture}[%
+grow via three points={one child at (0.5,-0.5) and
+	two children at (0.5,-0.5) and (0.5,-1.0)},
+edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+%
+\tiny
+%
+\tikzstyle{every node}=[anchor=west]
+\tikzstyle{file}=[draw=none]
+\tikzstyle{filecontents}=[draw=none,node font=\itshape]]
+%
+\node [file] {LaSM-Master.tex (\textbf{TechnicalReport})} 
+	child { node [filecontents] {Path definition}}
+	child { node [filecontents] {Choose documentclass with main settings: \textnormal{TechnicalReport.cls}}}
+	child { node [filecontents] {Font encoding}}
+	child { node [filecontents] {Set titlepage information (authorname, title, keywords,...)}}
+	child { node [filecontents] {Load own package: \textnormal{GlobalStyle.sty}}}
+	child { node [filecontents] {Load *.bib file (Literature)}}
+	child { node [filecontents] {Load *.tex file (TableLoad)}}
+	child { node [filecontents] {Font settings for CI TH Rosenheim}}
+	child { node [filecontents] {Main document environment}
+		child { node [filecontents] {Frontmatter (inputFM)}
+			child { node [filecontents] {(Optional: List of ToDos) }}
+			child { node [filecontents] {Load \textnormal{Titlepage-TechnicalReport.tex}}}
+			child { node [filecontents] {Load \textnormal{Abstract.tex}}}
+			child { node [filecontents] {Load \textnormal{Acknowledgements.tex}}}
+			child { node [filecontents] {Create Table of Contents}}
+			child { node [filecontents] {Create List of Figures}}
+			child { node [filecontents] {Create List of Tables}}
+			child { node [filecontents] {Load \textnormal{Symbols.tex}}}
+			child { node [filecontents] {Load \textnormal{Abbreviations.tex}}}
+		}
+			child [missing] {}
+			child [missing] {}
+			child [missing] {}
+			child [missing] {}
+			child [missing] {}
+			child [missing] {}
+			child [missing] {}
+			child [missing] {}
+			child [missing] {}
+		child { node [filecontents] {Mainmatter}
+			child { node [filecontents] {Optional: Load Sample Files}
+			    child { node [filecontents] {Kurzanleitung}}
+			    child { node [filecontents] {Beispiele}}
+			    child { node [filecontents] {Struktur}}
+			}
+			    child [missing] {}
+			    child [missing] {}
+			    child [missing] {}
+			child { node [filecontents] {Load Chapters}}
+			child { node [filecontents] {Load Annex chapters}}
+		}
+			child [missing] {}
+			child [missing] {}
+			child [missing] {}
+			child [missing] {}
+			child [missing] {}
+			child [missing] {}
+		child { node [filecontents] {Backmatter (inputBM)}
+			child { node [filecontents] {Bibliography}}
+		}
+	};
+\end{tikzpicture}
+
+%
+%
+%
+%
+%
+%
+% % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+% \subsection{Own packages: The *.sty files}
+% \label{styFiles}
+% % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% %
+% % MAIN STYLE FILE
+% \begin{tikzpicture}[%
+% grow via three points={one child at (0.5,-0.5) and
+% 	two children at (0.5,-0.5) and (0.5,-1.0)},
+% edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+% %
+% \tikzstyle{every node}=[anchor=west]
+% \tikzstyle{file}=[draw=none]
+% \tikzstyle{filecontents}=[draw=none,node font=\itshape]]
+% %
+% \node [file] {GlobalStyle.sty}
+% child { node [filecontents] {Load main packages for document}}
+% child { node [filecontents] {KOMA Script options and adjustments}}
+% child { node [filecontents] {Load all other packages used in the template}}
+% child { node [filecontents] {Load own packages}
+% 	child { node [filecontents] {\textnormal{Commands.sty}}}
+% 	child { node [filecontents] {\textnormal{Hyphenation.sty}}}
+% 	child { node [filecontents] {\textnormal{PlotProperties.sty}}}
+% };
+% \end{tikzpicture}
+% %
+% \\
+% %
+% % COMMANDS VARIABLES
+% \begin{tikzpicture}[%
+% grow via three points={one child at (0.5,-0.5) and
+% 	two children at (0.5,-0.5) and (0.5,-1.0)},
+% edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+% %
+% \tikzstyle{every node}=[anchor=west]
+% \tikzstyle{file}=[draw=none]
+% \tikzstyle{filecontents}=[draw=none,node font=\itshape]]
+% %
+% \node [file] {Commands.sty}
+% child { node [filecontents] {Important constants related with line spacing}}
+% child { node [filecontents] {General own commands for terms}};
+% \end{tikzpicture}
+% %
+% \\
+% %
+% % HYPENATION
+% \begin{tikzpicture}[%
+% grow via three points={one child at (0.5,-0.5) and
+% 	two children at (0.5,-0.5) and (0.5,-1.0)},
+% edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+% %
+% \tikzstyle{every node}=[anchor=west]
+% \tikzstyle{file}=[draw=none]
+% \tikzstyle{filecontents}=[draw=none,node font=\itshape]]
+% %
+% \node [file] {Hyphenation.sty}
+% child { node [filecontents] {Own rules for hyphenation}};
+% \end{tikzpicture}
+% %
+% \\
+% %
+% % PLOT PROPERTIES
+% \begin{tikzpicture}[%
+% grow via three points={one child at (0.5,-0.5) and
+% 	two children at (0.5,-0.5) and (0.5,-1.0)},
+% edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+% %
+% \tikzstyle{every node}=[anchor=west]
+% \tikzstyle{file}=[draw=none]
+% \tikzstyle{filecontents}=[draw=none,node font=\itshape]]
+% %
+% \node [file] {PlotProperties.sty}
+% child { node [filecontents] {Definition of default \textbf{colors}}}
+% child { node [filecontents] {Commands for default \textbf{linestyles} (width and style)}}
+% child { node [filecontents] {Settings for default \textbf{markers}}}
+% child { node [filecontents] {Default \textbf{tikzstyles for lines} in pgfplots}}
+% child { node [filecontents] {Default \textbf{font sizes} for legend/axes/nodes }}
+% child { node [filecontents] {Default settings for \textbf{axis and positioning}}}
+% child { node [filecontents] {Default settings for pgf plots/axis}	
+% 	child { node [filecontents] {global settings for:}
+% 		child { node [filecontents] {legends}}
+% 		child { node [filecontents] {marker styles}}
+% 		child { node [filecontents] {axis types}}
+% 	}
+% 		child [missing] {}
+% 		child [missing] {}
+% 		child [missing] {}
+% 	child { node [filecontents] {specific settings for:}
+% 		child { node [filecontents] {semilogx axis}}
+% 		child { node [filecontents] {loglog axis}}
+% 		child { node [filecontents] {tob semilogx axis}}
+% 		child { node [filecontents] {tob loglog axis}}
+% 		child { node [filecontents] {boxplots}}
+% 		child { node [filecontents] {Sound reduction index}}		
+% 		child { node [filecontents] {\dots}}
+% 	}
+% % 	child { node [filecontents] {specific axis styles for:}
+% % 		child { node [filecontents] {soundreductionR axis style}}
+% % 	}
+% };
+% \end{tikzpicture}
+% %
+% %
+% %
+% %
+% %
+% %
+% % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+% \subsection{Other *.tex and *.sty Files}
+% \label{OtherStyFiles}
+% % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% %
+% \textbf{Remove\_nb\_from\_misc\_BibEntries.tex:}\\
+% This code is loaded in GlobalStyle.sty.\\
+% It removes the "nb" when citing misc BibEntries with no date. Necessary for standards.
+% \\
+% \\
+% \textbf{svg\_laclaro.sty:}\\
+% This sty file is loaded in GlobalStyle.sty.\\
+% It is required for the IncludeSVG procedure.

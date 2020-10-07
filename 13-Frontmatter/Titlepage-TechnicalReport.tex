@@ -1,0 +1,57 @@
+%
+% BEGIN TITELPAGE
+% ===========================================================
+\begin{titlepage}
+\thispagestyle{empty} % Unterdückt Kopf und Fußzeile und Seitenzahlen
+%
+% HS LOGO EINFÜGEN
+\vspace*{-3cm} % 3cm nach oben verschieben
+% Box erzeugen und logo rechtsbündig einfügen
+% (Boxbreite größer 1\linewidth ermöglicht kleineren Seitenrand rechts)
+\makebox[1.15\linewidth][r]{\includegraphics[width=0.4\linewidth]{\GraficPath Logo-THRo}}
+%
+\vfill
+%
+\begin{center}
+	% SCHLUSSBERICHT
+	\huge
+	\lasmtype\\
+	\normalsize
+	%
+	\vspace{8ex}
+	%
+	% TITEL:
+	\huge \textbf
+	\lasmtitle\\
+	\normalsize
+	%	
+	\vspace{2ex}
+	%
+	% UNTERTITEL:
+	\Large
+	\lasmShortTitle\\
+	\normalsize
+	%	
+	\vspace{6ex}
+	%
+	\begin{tabular}{ll}
+		\textbf{Thema} 				& \lasmtopic \medskip \\
+		\textbf{Förderung} 			& \lasmfunding \medskip \\
+		\textbf{Förderprogramm} 	& \lasmfundingProgram \medskip \\
+		\textbf{Projektträger}		& \lasmleadPartner \medskip \\
+		\textbf{Förderkennzeichen} 	& \lasmfundingReference \medskip \\
+		\textbf{Projektlaufzeit} 	& \lasmBeginEndDate \medskip \\
+		\textbf{Zuwendungsempfänger}& \lasmuniversityA \\
+								 	& \lasmuniversityB \\
+	  							 	& \lasmuniversityC \medskip \\
+		\textbf{Projektleiter} 		& \lasmprojectLeader \medskip \\
+		\textbf{Projektmitarbeiter} & \lasmprojectStaffA \\
+ 									& \lasmprojectStaffB \medskip \\
+		\textbf{Berichtdatum} 		& \lasmdate
+\end{tabular}
+%
+\end{center}
+\vfill
+%
+\end{titlepage}
+% ==========================================================

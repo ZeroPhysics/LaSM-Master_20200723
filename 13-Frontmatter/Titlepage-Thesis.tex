@@ -1,0 +1,38 @@
+%
+% BEGIN TITELSEITE
+% ===========================================================
+%\begin{titlepage}
+\thispagestyle{empty} % Unterdückt Kopf und Fußzeile und Seitenzahlen
+%
+% TH LOGO
+\vspace*{-3cm} % 3cm nach oben verschieben
+% Box erzeugen und logo rechtsbündig einfügen
+% (Boxbreite größer 1\linewidth ermöglicht kleineren Seitenrand rechts)
+\makebox[1.15\linewidth][r]{\includegraphics[width=0.4\linewidth]{\GraficPath Logo-THRo}}
+%
+\vspace*{0.2\textheight}        % The * is necessary at the beginning of the page   
+\begin{center}
+	\Huge \textbf   
+	\lasmtitle\\
+	\vspace{4ex}
+	\large \textbf  
+	\lasmthesistype\\
+ 	\large \textnormal
+	im Studiengang \lasmthesisstudies der Technischen Hochschule Rosenheim\\ 
+	\vspace{6ex}
+	\Large \textbf 
+	\lasmauthor\\ 
+	\large \textrm
+	\vfill
+	\begin{tabular}{ll}
+		Erstprüfer: & \lasmthesisSupervisorA\\
+		Zweitprüfer: & \lasmthesisSupervisorB
+		\vspace{4ex}\\
+		Datum der Anmeldung: & \lasmthesisRegDate\\
+		Datum der Abgabe: & \lasmdate
+	\end{tabular}
+\end{center}  
+%
+%
+%\end{titlepage}
+% ==========================================================
